@@ -1,0 +1,8 @@
+{
+  "name": "B-WARE app",
+  "description": "Cross-platform emergency towing dispatcher with real-time GPS tracking and instant incident response.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

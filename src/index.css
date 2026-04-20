@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Arial Black", sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  --color-bg: #0F0F11;
+  --color-accent: #FF5C00;
+  --color-accent-muted: rgba(255, 92, 0, 0.4);
+  --color-text: #FFFFFF;
+  --color-muted: #888888;
+  --color-card: #1A1A1D;
+  --color-line: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-body;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass-card {
+  @apply bg-card border border-line rounded-xl;
+}
+
+.big-btn-shadow {
+  box-shadow: 0 0 30px var(--color-accent-muted);
+}
+
+@keyframes radar {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(3.5); opacity: 0; }
+}
+
+.animate-radar {
+  animation: radar 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse-dot {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-80px); }
+  100% { transform: translateY(80px); }
+}
+
+.map-gradient {
+  background: radial-gradient(circle at top right, #222, var(--color-bg));
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #FF5C00;
+}
